@@ -1,6 +1,22 @@
 import logo from './logo.svg';
 import './App.css';
 
+fetch('http://localhost:3000/api/v1/users' , {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+    Accept: 'application/json'
+  },
+  body: JSON.stringify({
+    user: {
+      username: "dmx_GOAT",
+      password: "rip2021"
+    }
+  })
+})
+.then(r => r.json())
+.then(console.log)
+
 function App() {
   return (
     <div className="App">
