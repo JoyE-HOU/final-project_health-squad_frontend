@@ -1,7 +1,12 @@
 import logo from './logo.svg';
 import './App.css';
 
-fetch('http://localhost:3000/api/v1/users' , {
+
+// .then(console.log)
+
+function App() {
+  const signUp = () => {
+    fetch('http://localhost:3000/api/v1/users' , {
   method: 'POST',
   headers: {
     'Content-Type': 'application/json',
@@ -9,31 +14,21 @@ fetch('http://localhost:3000/api/v1/users' , {
   },
   body: JSON.stringify({
     user: {
-      username: "dmx_GOAT",
+      username: "kurama_yu",
       password: "rip2021"
     }
   })
 })
 .then(r => r.json())
-.then(console.log)
+.then(userData => {
+  console.log(userData) 
+  localStorage.token = userData.jwt
+})
+  }
 
-function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <button onClick={signUp}>hello</button>
     </div>
   );
 }
