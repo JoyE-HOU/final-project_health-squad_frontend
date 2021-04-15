@@ -1,5 +1,7 @@
 import React, {useState} from 'react'
 
+import { withRouter } from 'react-router'
+
 function SignUpComponent(props) {
     const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")
@@ -32,6 +34,7 @@ function SignUpComponent(props) {
             console.log(data)
             localStorage.setItem("token", data.jwt)
             props.handleLogin(data.user)
+            props.history.push('/user')
         })
         setUsername("")
         setPassword("")
@@ -61,4 +64,4 @@ function SignUpComponent(props) {
     )
 }
 
-export default SignUpComponent
+export default withRouter (SignUpComponent)

@@ -1,5 +1,10 @@
 import React, {useState, useEffect} from 'react'
-import { BrowserRouter as Router, Route, Redirect, Switch } from 'react-router-dom';
+import { 
+  BrowserRouter as Router, 
+  Route, 
+  Redirect,
+  Switch
+} from 'react-router-dom';
 import './App.css';
 
 import WelcomeContainer from './containers/WelcomeContainer'
@@ -10,6 +15,7 @@ import LoginForm from './components/LoginComponent'
 
 function App() {
   const [user, setUser] = useState(null)
+  // const [user, setUser] = useState({})
   const [form, setForm] = useState("")
   
   useEffect(() => {
@@ -29,7 +35,8 @@ function App() {
         })
       }
     }
-  },[])
+    //added 'user' to line 38, remove it issues arise.
+  },[user])
 
   const handleLogin = (input) => {
     setUser(input)
@@ -40,6 +47,10 @@ function App() {
   }
 
   console.log(user)
+  
+  // const token = localStorage.getItem("token")
+
+  // const currentUser = 
 
   const renderForm = () => {
     switch(form){
@@ -53,12 +64,27 @@ function App() {
 
   return (
     <div className="App">
-        {/* <button onClick={signUp}>hello</button> */}
-        <WelcomeContainer handleFormSwitch={handleFormSwitch}/>
-        {
-          renderForm()
-        }
-        <UserContainer/>
+        <Router>
+          <Switch>
+            <Route exact path='/'>
+            <WelcomeContainer handleFormSwitch={handleFormSwitch}/>
+            {
+              renderForm()
+            }
+            </Route>
+            
+            <Route path='/user'>
+              {
+                localStorage.getItem('token') ? <UserContainer user={user}/> : <Redirect to="/" />
+              }
+              {/* <UserContainer/> */}
+            </Route>
+
+            <Route >
+              <Redirect to='/' />
+            </Route>
+          </Switch>
+        </Router>
     </div>
   );
 }

@@ -1,5 +1,7 @@
 import React, {useState} from 'react'
 
+import { withRouter } from 'react-router'
+
 function LoginComponent(props){
     const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")
@@ -32,6 +34,7 @@ function LoginComponent(props){
             if(data.jwt) {
                 localStorage.setItem("token", data.jwt)
                 props.handleLogin(data.user)
+                props.history.push('/user')
                 alert("congrats, you're signed in!")
             } else {
                 alert("invalid")
@@ -66,4 +69,4 @@ function LoginComponent(props){
     )
 } 
 
-export default LoginComponent
+export default withRouter (LoginComponent)
