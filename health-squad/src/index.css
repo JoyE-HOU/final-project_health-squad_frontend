@@ -1,8 +1,12 @@
-body {
+html {
   background-image: url("https://image.freepik.com/free-photo/stethoscope-orange-background-space-text-healthcare_185193-6364.jpg");
+  height: 100%;
+  background-position: center;
   background-repeat: no-repeat;
-  /* background-position: center; */
   background-size: cover;
+}
+
+body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
