@@ -1,6 +1,16 @@
-function RefillContainer(){
+import RefillCard from "../components/RefillCard";
+
+function RefillContainer(props){
+
     return(
-        <div>List of Refills</div>
+        <div>
+          <div class="alert alert-secondary" role="alert">
+            <h4>Upcoming Refills</h4>
+          </div>
+          <div>
+            { props.medications.map ((med) => <RefillCard med={med} key={med.id}/>)}
+          </div>
+        </div>
     )
 }
 

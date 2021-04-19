@@ -1,7 +1,7 @@
 import {useHistory} from 'react-router-dom'
 
 const bannerStyle = {
-    background: 'white'
+    background: 'white'    
 }
 
 function NavContainer(props){
@@ -13,15 +13,41 @@ function NavContainer(props){
         localStorage.clear()
         history.push('/')
     }
+
+    // function greeting() {
+    //     let d = new Date()
+    //     let time = d.getHours()
+
+    //     let greet
+    //     if (time < 12) {
+    //         document.write("Good morning")
+    //     }
+    //     if (time < 12) {
+    //         document.write("Good morning")
+    //     }console.log(time);
+    // }
     
     return(
         <div>
-            <header style={bannerStyle}>
+            <nav className="navbar navbar-light bg-light">
+                <img className='health-squad logo'src='./healthsquad_st_logo.png' alt='health-squad logo'></img>
+                    <h1>
+                    {props.hour <12 ? `Good Morning, !` : `Good Afternoon, !`}
+                    {/* {props.hour <12 ? `Good Morning, ${ props }!` : `Good Afternoon, ${ props.user.username }!`} */}
+                    </h1>
+                    <button onClick={logOut} type="button" className="btn btn-secondary">Logout</button>
+            </nav>
+            {/* <header style={bannerStyle}>
             <img className='health-squad logo'src='./healthsquad_st_logo.png' alt='health-squad logo'></img>
-            <h1>Welcome back!</h1>
-            {/* <h1>Welcome back, { props.user.username }!</h1> */}
-            <button onClick={logOut}>Logout</button>
-            </header>
+            </header> */}
+            <div className="container">
+                <div className='row'>
+                    <div className='col'>
+                    </div>
+                    <div className='col'>
+                    </div>
+                </div>
+            </div>
         </div>
     )
 }

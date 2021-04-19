@@ -1,6 +1,15 @@
-function ReminderContainer(){
+import ReminderCard from '../components/ReminderCard';
+
+function ReminderContainer(props){
     return(
-        <div>List of Reminders</div>
+      <div>
+        <div class="alert alert-secondary" role="alert">
+          <h4>Current Reminders</h4>
+        </div>
+      <div>
+        { props.medications.map ((med) => <ReminderCard med={med} key={med.id}/>)}
+      </div>
+    </div>
     )
 }
 
