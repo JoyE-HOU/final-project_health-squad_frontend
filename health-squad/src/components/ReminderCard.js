@@ -26,9 +26,8 @@ const ReminderCard = ({med}) => {
         {/* <div class="card" style="width: 18rem;"> */}
           <div className="card-body">
             <h5 className="card-title">{med.medication.name}</h5>
-            {/* <h6 className="card-subtitle mb-2 text-muted">Card subtitle</h6> */}
+            <h6 className="card-subtitle mb-2 text-muted">Instructions: {med.medication.directions}</h6>
             <p className="card-text">{time}</p>
-            <p className="card-text">Instructions: {med.medication.directions}</p>
             {/* <a href="#" class="card-link">Card link</a>
             <a href="#" class="card-link">Another link</a> */}
             <button onClick={Hello} type="button" className="btn btn-info">Add to calendar<br></br>
