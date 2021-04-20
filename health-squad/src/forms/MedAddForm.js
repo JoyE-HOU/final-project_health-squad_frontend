@@ -5,7 +5,7 @@ import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
 import Col from 'react-bootstrap/Col';
 
-function MedForm(){
+function MedAddForm(){
   
   const medicationURL = 'http://localhost:3000/api/v1/medications'
 
@@ -30,7 +30,7 @@ function MedForm(){
       <div>
 
       <Button variant="secondary" onClick={handleShow}>
-        Add
+        Add Prescription
       </Button>
 
       <Modal show={show} onHide={handleClose}>
@@ -74,4 +74,4 @@ function MedForm(){
 
 }
 
-export default MedForm
+export default MedAddForm

@@ -7,7 +7,9 @@ import ReminderContainer from './ReminderContainer'
 import RefillContainer from './RefillContainer'
 
 //forms
-import MedForm from '../forms/MedForm'
+import MedAddForm from '../forms/MedAddForm'
+import MedEditForm from '../forms/MedEditForm'
+
 
 const prescriptionURL = 'http://localhost:3000/api/v1/prescriptions'
 
@@ -53,7 +55,9 @@ function UserContainer(props){
             <div className="row">
                 <div className="col-">
                     <MedicationContainer medications={medications}/>
-                    <MedForm />
+                    <MedAddForm />
+                    <br></br>
+                    <MedEditForm />
                 </div>
                 <div className="col-md">
                     <RefillContainer medications={medications}/>
