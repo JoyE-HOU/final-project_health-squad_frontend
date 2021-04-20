@@ -1,6 +1,7 @@
 import React  from 'react';
 import format from 'date-fns/format';
 import addDays from 'date-fns/addDays';
+import subDays from 'date-fns/subDays';
 
 const RefillCard = ({med}) => {
 
@@ -10,33 +11,23 @@ const RefillCard = ({med}) => {
       alert("Hello World!");
   }
 
-    
-    // // const date = new Date(new Date().getFullYear(),new Date().getMonth() , new Date().getDate()); // Now
-    // const date = format(new Date(), 'MM/dd/yyyy'); // Now
-    // // date.setDate(date.getDate()); // Set now + 30 days as the new date
-    // // date.setDate(date.getDate() + med.medication.count - 14); // Set now + 30 days as the new date
-    // // date.setDate(date.getDate("YYYY-MM-DD") + med.medication.count - 14); // Set now + 30 days as the new date
-    // console.log(date);
-    
-    // var result = format(new Date(2014, 1, 11), 'MM/dd/yyyy')
-    
-    
-    const date = new Date('2020.09.29 10:12:00');
-    //add days
+  //add days
+    const date = new Date();
     const sum1 = addDays(date, med.medication.count);
-    
     console.log(sum1);
-    const date = format(new Date(sum1), 'MM/dd/yyyy'); // Now
-    console.log(date);
+    const sub1 = subDays(sum1, 14);
+    console.log(sub1);
+    const refillDate = format(new Date(sum1), 'MM/dd/yyyy');
+    console.log(refillDate);
 
 
     return(
         <div className="card">
         {/* <div class="card" style="width: 18rem;"> */}
           <div className="card-body">
-            {/* <h5 className="card-title">{med.medication.name}</h5> */}
+            <h5 className="card-title">{med.medication.name}</h5>
             {/* <h6 className="card-subtitle mb-2 text-muted">Card subtitle</h6> */}
-            {/* <p className="card-text">{med.medication.count + date}</p> */}
+            <p className="card-text">Remember to order refill around: {refillDate}</p>
             {/* <a href="#" class="card-link">Card link</a>
             <a href="#" class="card-link">Another link</a> */}
             <button onClick={Hello} type="button" className="btn btn-info">Add to calendar<br></br>
