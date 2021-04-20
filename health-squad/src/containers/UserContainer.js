@@ -20,6 +20,11 @@ function UserContainer(props){
     const [medications, setMedications] = useState([])
     //change greeting based on time of day
     const [hour, setHour] = useState(null)
+    //new prescription form
+    const [add, setAdd] = useState({
+        name: "",
+        time: ""
+    })
     
     useEffect(() => {
         loadData();
@@ -45,6 +50,11 @@ function UserContainer(props){
     let Hello = () => {
             alert("Hello World!");
         }
+    
+    const removeMed = (e) => {
+        const id = e.target.getAttribute("id")
+        setMedications(medications.filter(med => console.log(med)))
+    }
 
     return(
         <div className="container">
@@ -54,7 +64,7 @@ function UserContainer(props){
             <br></br>
             <div className="row">
                 <div className="col-">
-                    <MedicationContainer medications={medications}/>
+                    <MedicationContainer removeMed={removeMed} medications={medications}/>
                     <MedAddForm />
                     <br></br>
                     <MedEditForm />

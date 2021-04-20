@@ -2,8 +2,8 @@ import { useState, useEffect } from "react";
 
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
-import Form from 'react-bootstrap/Form';
-import Col from 'react-bootstrap/Col';
+// import Form from 'react-bootstrap/Form';
+// import Col from 'react-bootstrap/Col';
 
 function MedAddForm(){
   
@@ -11,6 +11,9 @@ function MedAddForm(){
 
   const [prescript, setPrescript] = useState([])
   const [show, setShow] = useState(false);
+  //set state of form
+  const [name, setName] = useState("")
+  const [time, setTime] = useState("")
 
   useEffect(() => {
     loadData();
@@ -21,7 +24,7 @@ function MedAddForm(){
     const data = await response.json();
     setPrescript(data)
   }
-  console.log(prescript);
+  // console.log(prescript);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -39,27 +42,26 @@ function MedAddForm(){
         </Modal.Header>
         <Modal.Body>
 
-        <Form>
-          <Form.Group controlId="exampleForm.ControlSelect1">
-            <Form.Label>Medication Name</Form.Label>
-            <Form.Control as="select">
-            { prescript.map (med => (
+        <form>
+          <div className="form-group row">
+          <label for="example-time-input" class="col-2 col-form-label">Name</label>
+            <select class="form-select" aria-label="Default select example">
+              <option value={name} onChange={(e) => setName({name: e.target.value})} selected>Select new prescription</option>
+                { prescript.map (med => (
               <option key={med.id}>{med.name}</option>
-            ))}
-            </Form.Control>
-          </Form.Group>
-          <Form.Group controlId="exampleForm.ControlInput1">
-            <Form.Label>Set Reminder Time</Form.Label>
-          <Form.Row>
-          <Col xs lg="6">
-            <Form.Control type="time" placeholder="hour" />
-          </Col>
-          </Form.Row>
-          </Form.Group>
-          <Button variant="primary">
-            Submit
-          </Button>
-        </Form>
+              ))}
+            </select>
+          </div>
+          <div className="form-group row">
+            <label for="example-time-input" class="col-2 col-form-label">Time</label>
+            <div class="col-10">
+              <input class="form-control" type="time" value={time} onChange={(e) => setTime({time: e.target.value})} id="example-time-input"/>
+            </div>
+          </div>
+          <div className="form-group row">
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </div>
+        </form>
 
         </Modal.Body>
         <Modal.Footer>

@@ -8,16 +8,14 @@ const ReminderCard = ({med}) => {
 
   let date = new Date(med.reminder);
 
-  // the hour in your current time zone
-  console.log(date);
-  console.log(med.reminder);
-  // console.log( date.getHours() );
+  // console.log(date);
+  // console.log(med.reminder);
 
   const time = format(new Date(med.reminder), 'eee, ha');
-  console.log(time);
+  // console.log(time);
 
   var d = new Date(med.reminder)
-  console.log(d);
+  // console.log(d);
 
   
 

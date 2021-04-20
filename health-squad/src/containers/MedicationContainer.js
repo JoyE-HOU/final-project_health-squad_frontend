@@ -2,6 +2,8 @@ import MedicineCard from '../components/MedicineCard'
 
 function MedicationContainer(props){
 
+    console.log(props);
+
     return(
         <div className="container">
         {/* <div className="ui four cloumn grid"> */}

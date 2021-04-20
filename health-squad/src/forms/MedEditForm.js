@@ -21,7 +21,7 @@ function MedEditForm(){
     const data = await response.json();
     setPrescript(data)
   }
-  console.log(prescript);
+  // console.log(prescript);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
