@@ -1,5 +1,4 @@
 import React, {useEffect, useState} from 'react'
-// import { Divider, Grid, Image, Segment } from 'semantic-ui-react'
 
 //containers
 import NavContainer from './NavContainer'
@@ -7,9 +6,10 @@ import MedicationContainer from './MedicationContainer'
 import ReminderContainer from './ReminderContainer'
 import RefillContainer from './RefillContainer'
 
+//forms
 import MedForm from '../forms/MedForm'
 
-const medURL = 'http://localhost:3000/api/v1/prescriptions'
+const prescriptionURL = 'http://localhost:3000/api/v1/prescriptions'
 
 function UserContainer(props){
 
@@ -26,7 +26,7 @@ function UserContainer(props){
     }, [])
 
     const loadData = async () => {
-        const response = await fetch(medURL);
+        const response = await fetch(prescriptionURL);
         const data = await response.json();
         setMedications(data)
     }
@@ -54,10 +54,6 @@ function UserContainer(props){
                 <div className="col-">
                     <MedicationContainer medications={medications}/>
                     <MedForm />
-                        <div>
-                            <button type="button" className="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal">Add</button>
-                            <button onClick={Hello} type="button" className="btn btn-secondary">Edit</button>
-                        </div>
                 </div>
                 <div className="col-md">
                     <RefillContainer medications={medications}/>

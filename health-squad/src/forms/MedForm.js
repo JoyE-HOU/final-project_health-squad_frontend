@@ -1,33 +1,74 @@
-// import React from 'react'
+import { useState, useEffect } from "react";
 
-//url for medications
-const medURL = 'http://localhost:3000/api/v1/medications'
+import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
+import Form from 'react-bootstrap/Form';
+import Col from 'react-bootstrap/Col';
 
 function MedForm(){
+  
+  const medicationURL = 'http://localhost:3000/api/v1/medications'
 
-    console.log(medURL);
+  const [prescript, setPrescript] = useState([])
+  const [show, setShow] = useState(false);
+
+  useEffect(() => {
+    loadData();
+  }, [])
+
+  const loadData = async () => {
+    const response = await fetch(medicationURL);
+    const data = await response.json();
+    setPrescript(data)
+  }
+  console.log(prescript);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
     return(
-        <div>
+      <div>
 
-        <div class="modal" tabindex="-1">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Modal title</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      <Button variant="secondary" onClick={handleShow}>
+        Add
+      </Button>
+
+      <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Add new prescription</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+
+        <Form>
+          <Form.Group controlId="exampleForm.ControlSelect1">
+            <Form.Label>Medication Name</Form.Label>
+            <Form.Control as="select">
+            { prescript.map (med => (
+              <option key={med.id}>{med.name}</option>
+            ))}
+            </Form.Control>
+          </Form.Group>
+          <Form.Group controlId="exampleForm.ControlInput1">
+            <Form.Label>Set Reminder Time</Form.Label>
+          <Form.Row>
+          <Col xs lg="6">
+            <Form.Control type="time" placeholder="hour" />
+          </Col>
+          </Form.Row>
+          </Form.Group>
+          <Button variant="primary">
+            Submit
+          </Button>
+        </Form>
+
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Close
+          </Button>
+        </Modal.Footer>
+      </Modal>
       </div>
-      <div class="modal-body">
-        <p>Modal body text goes here.</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
-</div>
 
     )
 
