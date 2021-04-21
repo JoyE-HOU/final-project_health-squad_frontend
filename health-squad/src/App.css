@@ -1,16 +1,17 @@
 .App {
   text-align: center;
+  padding: 70px 0;
+}
+
+.Landing {
+  text-align: center;
+  padding: 70px 0;
+  background-color: rgba(255, 255, 255, 0.897);
 }
 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
 }
 
 .App-header {
@@ -28,11 +29,14 @@
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.container {
+  background-color: rgba(248, 249, 250, 0.897);
+}
+
+.user_container {
+  background-image: url("/Users/joyevans/Desktop/phase_5/Code/final-project_health-squad_frontend/health-squad/src/images/84850345-huge copy.jpeg");
+  /* background-image: url("https://thumbs.dreamstime.com/b/healthcare-medical-concept-red-stethoscope-medicine-orange-background-copy-space-healthcare-medical-114030074.jpg"); */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }

@@ -65,6 +65,7 @@ function UserContainer(props){
             <div className="row">
                 <div className="col-">
                     <MedicationContainer removeMed={removeMed} medications={medications}/>
+                    <br></br>
                     <MedAddForm />
                     <br></br>
                     <MedEditForm />

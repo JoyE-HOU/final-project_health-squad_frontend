@@ -63,7 +63,7 @@ function App() {
   }
 
   return (
-    <div className="App">
+    <div className="Landing">
         <Router>
           <Switch>
             <Route exact path='/'>
@@ -74,10 +74,9 @@ function App() {
             </Route>
             
             <Route path='/user'>
-              {
+              <div className="user_container">{
                 localStorage.getItem('token') ? <UserContainer user={user}/> : <Redirect to="/" />
-              }
-              {/* <UserContainer/> */}
+              }</div>
             </Route>
 
             <Route >
@@ -86,6 +85,7 @@ function App() {
           </Switch>
         </Router>
     </div>
+    // </div>
   );
 }
 

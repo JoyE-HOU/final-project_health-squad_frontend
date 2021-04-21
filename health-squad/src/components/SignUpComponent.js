@@ -46,21 +46,21 @@ function SignUpComponent(props) {
     }
     
     return(
-        <div style={formDivStyle}>
-            <h1>Sign Up</h1>
-            <form className="ui form" onSubmit={handleSubmit}>
-                <div className="field">
-                    <label>Username</label>
-                    <input value={username} onChange={handleUsernameChange} type="text" placeholder="username"/>
-                </div>
-                <div className="field">
-                    <label>Password</label>
-                    <input value={password} onChange={handlePasswordChange} type="password" placeholder="password"/>
-                </div>
-                
-                <button className="ui button" type="submit">Submit</button>
-            </form>
-        </div>
+            <form onSubmit={handleSubmit}>
+                {/* <h1>Sign Up</h1> */}
+                <div class="row justify-content-md-center">
+            <div class="col-sm-3 my-1">
+            <label for="exampleInputUsername1">Username</label>
+            <input value={username} onChange={handleUsernameChange} type="text" class="form-control" id="exampleInputUsername1" placeholder="Username"/>
+            </div>
+    <div class="col-sm-3 my-1">
+            <label for="exampleInputPassword1">Password</label>
+            <input value={password} onChange={handlePasswordChange} type="password" class="form-control" id="exampleInputPassword1" placeholder="Password"/>
+            </div>
+  </div>
+            <small id="emailHelp" class="form-text text-muted">We'll never share your info with anyone else.</small>
+        <button type="submit" class="btn btn-primary">Sign Up</button>
+    </form>
     )
 }
 
