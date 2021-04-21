@@ -1,8 +1,10 @@
 body {
-  background-image: url("https://thumbs.dreamstime.com/b/healthcare-medical-concept-red-stethoscope-medicine-orange-background-copy-space-healthcare-medical-114030074.jpg");
+  /* background-image: url("https://thumbs.dreamstime.com/b/healthcare-medical-concept-red-stethoscope-medicine-orange-background-copy-space-healthcare-medical-114030074.jpg"); */
+  background-image: url("/Users/joyevans/Desktop/phase_5/Code/final-project_health-squad_frontend/health-squad/src/images/84850345-huge copy.jpeg");
   background-repeat: no-repeat;
   background-size: cover;
-  /* background-position: center; */
+  background-position: center;
+  background-attachment: fixed;
   /* height: 100%; */
 
   margin: 0;
