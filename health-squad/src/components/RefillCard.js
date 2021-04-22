@@ -26,7 +26,6 @@ const RefillCard = ({med}) => {
   })
 
     let saveCalInvite = () => {
-      alert("Hello World!");
       let url = [
         "BEGIN:VCALENDAR",
         "VERSION:2.0",
