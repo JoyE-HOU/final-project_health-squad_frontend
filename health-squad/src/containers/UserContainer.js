@@ -10,6 +10,8 @@ import RefillContainer from './RefillContainer'
 import MedAddForm from '../forms/MedAddForm'
 import MedEditForm from '../forms/MedEditForm'
 
+import CreatePDF from '../test_code/CreatePDF'
+
 
 
 const prescriptionURL = 'http://localhost:3000/api/v1/prescriptions'
@@ -66,6 +68,8 @@ function UserContainer(props){
             <div className="row">
                 <div className="col-">
                     <MedicationContainer removeMed={removeMed} medications={medications}/>
+                    <br></br>
+                    <CreatePDF medications={medications}/>
                     <br></br>
                     <MedAddForm />
                     <br></br>
