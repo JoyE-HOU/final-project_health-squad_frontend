@@ -30,7 +30,7 @@ function App() {
         })
         .then(r => r.json())
         .then(data => {
-          console.log(data)
+          // console.log(data)
           setUser(data.user)
         })
       }
@@ -46,7 +46,7 @@ function App() {
     setForm(input)
   }
 
-  console.log(user)
+  // console.log(user)
   
   // const token = localStorage.getItem("token")
 

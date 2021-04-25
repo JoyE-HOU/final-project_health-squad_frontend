@@ -2,12 +2,12 @@ import MedicineCard from '../components/MedicineCard'
 
 function MedicationContainer(props){
 
-    console.log(props);
+    // console.log(props);
 
     return(
         <div className="container">
         {/* <div className="ui four cloumn grid"> */}
-            <div class="alert alert-secondary" role="alert">
+            <div className="alert alert-secondary" role="alert">
                 <h4>Current Prescriptions</h4>
             </div>
             
