@@ -5,7 +5,6 @@ function NavContainer(props){
     const history = useHistory()
     
     function logOut() {
-        alert('Goodbye')
         localStorage.clear()
         history.push('/')
     }
