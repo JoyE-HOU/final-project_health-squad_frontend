@@ -27,8 +27,11 @@ function NavContainer(props){
             <nav className="navbar navbar-light bg-light">
                 <img className='health-squad logo'src='./healthsquad_st_logo.png' alt='health-squad logo'></img>
                     <h1>
-                    {props.hour <12 ? `Good Morning, !` : `Good Afternoon, !`}
-                    {/* {props.hour <12 ? `Good Morning, ${ props }!` : `Good Afternoon, ${ props.user.username }!`} */}
+                    {props.hour <12 ? `Good Morning!` 
+                    : props.hour >=12 && props.hour <=17 ? `Good Afternoon!`
+                    : `Good Evening`
+                    }
+                    {/* {props.hour <12 ? `Good Morning, ${ props.user.username }!` : `Good Afternoon, ${ props.user.username }!`} */}
                     </h1>
                     <button onClick={logOut} type="button" className="btn btn-secondary">Logout</button>
             </nav>
