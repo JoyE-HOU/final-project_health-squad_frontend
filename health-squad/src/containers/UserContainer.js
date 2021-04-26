@@ -18,7 +18,7 @@ const prescriptionURL = 'http://localhost:3000/api/v1/prescriptions'
 
 function UserContainer(props){
 
-    // console.log(props);
+    // console.log(props.user.id);
 
     const [medications, setMedications] = useState([])
     //change greeting based on time of day
@@ -71,7 +71,7 @@ function UserContainer(props){
                     <br></br>
                     <CreatePDF medications={medications}/>
                     <br></br>
-                    <MedAddForm />
+                    <MedAddForm user={props.user}/>
                     <br></br>
                     <MedEditForm />
                 </div>
