@@ -5,15 +5,16 @@ import Modal from 'react-bootstrap/Modal';
 // import Form from 'react-bootstrap/Form';
 // import Col from 'react-bootstrap/Col';
 
-function MedAddForm(){
+function MedAddForm(props){
   
   const medicationURL = 'http://localhost:3000/api/v1/medications'
+  const prescriptionURL = 'http://localhost:3000/api/v1/prescriptions'
 
   const [prescript, setPrescript] = useState([])
   const [show, setShow] = useState(false);
   //set state of form
-  const [name, setName] = useState("")
-  const [time, setTime] = useState("")
+  const [name, setName] = useState("Select new prescription")
+  const [time, setTime] = useState("HH:mm")
 
   useEffect(() => {
     loadData();
@@ -29,6 +30,29 @@ function MedAddForm(){
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
+  let handleSubmit = (e) => {
+    // e.preventDefault()
+
+    let newMed = {
+      user_id: props.user.id,
+      medication_id: name,
+      medication_id: parseInt(name.name),
+      reminder: time.time
+    }
+
+    console.log(newMed);
+
+    let reqObj = {
+      headers: {"Content-Type": "application/json"},
+      method: "POST",
+      body: JSON.stringify(newMed)
+    }
+
+    fetch(prescriptionURL, reqObj)
+      .then(r => r.json())
+      .then(console.log)
+  }
+
     return(
       <div>
 
@@ -42,20 +66,29 @@ function MedAddForm(){
         </Modal.Header>
         <Modal.Body>
 
-        <form>
+        <form onSubmit={handleSubmit}>
           <div className="form-group row">
           <label for="example-time-input" class="col-2 col-form-label">Name</label>
-            <select class="form-select" aria-label="Default select example">
-              <option value={name} onChange={(e) => setName({name: e.target.value})} selected>Select new prescription</option>
+            
+            {/* <select value={name} onChange={(e) => setName({name: e.target.value})} class="form-select" aria-label="Default select example"> */}
+            {/* <select name="name" value={name} onChange={(e) => setName({name: e.target.value})} class="form-select" aria-label="Default select example"> */}
+            <select onChange={(e) => setName({name: e.target.value})} class="form-select" aria-label="Default select example">
+              
+              <option>Select new prescription</option>
                 { prescript.map (med => (
-              <option key={med.id}>{med.name}</option>
+              <option value={med.id}>{med.name}</option>
+              /* <option key={med.id}>{med.id}</option> */
               ))}
+            
             </select>
           </div>
           <div className="form-group row">
             <label for="example-time-input" class="col-2 col-form-label">Time</label>
             <div class="col-10">
-              <input class="form-control" type="time" value={time} onChange={(e) => setTime({time: e.target.value})} id="example-time-input"/>
+              {/* <input class="form-control" type="time" value={time} onChange={(e) => setTime({time: e.target.value})} id="example-time-input"/> */}
+              {/* <input name="time" class="form-control" type="time" value={time} onChange={(e) => setTime({time: e.target.value})} id="example-time-input"/> */}
+              {/* <input class="form-control" type="time" onChange={(e) => setTime({time: e.target.value})} id="example-time-input"/> */}
+              <input class="form-control" type="time" onChange={(e) => setTime({time: e.target.value})} id="example-time-input"/>
             </div>
           </div>
           <div className="form-group row">
