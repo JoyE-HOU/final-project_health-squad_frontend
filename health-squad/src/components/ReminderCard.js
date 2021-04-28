@@ -1,5 +1,6 @@
 import React, { useState }  from 'react';
 import format from 'date-fns/format';
+import add from 'date-fns/add';
 
 const ReminderCard = ({med}) => {
 
@@ -59,14 +60,18 @@ const ReminderCard = ({med}) => {
     // Ensure date values are double digits
     return num < 10 ? "0" + num : num;
   }
+  
+  //formatting med.reminder time to only show HH:mma
+  let test = add(new Date(med.reminder), {
+    hours: 6,
+    minutes: 0
+  })
+  
+  console.log(test);
 
-  let date = new Date(med.reminder);
-  // console.log(date);
-  // console.log(med.reminder);
-  const time = format(new Date(med.reminder), 'eee, ha');
-  // console.log(time);
-  var d = new Date(med.reminder)
-  // console.log(d);
+  var formattedDate = format(test, "H:mma");
+
+  console.log(formattedDate);
 
   return(
 <div className="card">
@@ -74,7 +79,7 @@ const ReminderCard = ({med}) => {
           <div className="card-body">
             <h5 className="card-title">{med.medication.name}</h5>
             <h6 className="card-subtitle mb-2 text-muted">Instructions: {med.medication.directions}</h6>
-            <p className="card-text">{time}</p>
+            <p className="card-text">{formattedDate}</p>
             {/* <a href="#" class="card-link">Card link</a>
             <a href="#" class="card-link">Another link</a> */}
             <button onClick={saveCalInvite} type="button" className="btn btn-info">Add to calendar<br></br>
