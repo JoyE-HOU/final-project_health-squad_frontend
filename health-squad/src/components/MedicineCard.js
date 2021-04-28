@@ -1,5 +1,7 @@
 import React from 'react'
 
+import MedEditForm from '../forms/MedEditForm'
+
 const MedicineCard = ({med}) => {
 
   // console.log(med.medication);
@@ -12,9 +14,10 @@ const MedicineCard = ({med}) => {
           <ul className="list-group list-group-flush">
             <li className="list-group-item">{med.medication.name}
               <br></br>
-              <button onClick={Hello} className="btn btn-sm btn-outline-danger ml-4">
+              <MedEditForm med={med}/>
+              {/* <button onClick={Hello} className="btn btn-danger">
                 Delete
-              </button>
+              </button> */}
             </li>
           </ul>
   )

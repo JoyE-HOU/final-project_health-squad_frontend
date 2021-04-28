@@ -8,7 +8,7 @@ import RefillContainer from './RefillContainer'
 
 //forms
 import MedAddForm from '../forms/MedAddForm'
-import MedEditForm from '../forms/MedEditForm'
+// import MedEditForm from '../forms/MedEditForm'
 
 import CreatePDF from '../forms/CreatePDF'
 
@@ -73,7 +73,7 @@ function UserContainer(props){
                     <br></br>
                     <MedAddForm user={props.user}/>
                     <br></br>
-                    <MedEditForm />
+                    {/* <MedEditForm /> */}
                 </div>
                 <div className="col-md">
                     <RefillContainer medications={medications}/>
