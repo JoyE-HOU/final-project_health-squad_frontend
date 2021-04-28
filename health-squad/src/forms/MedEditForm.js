@@ -21,7 +21,7 @@ function MedEditForm(props){
   console.log(props);
 
   let handleSubmit = (e) => {
-    e.preventDefault()
+    // e.preventDefault()
 
     let editMed = {
       id: props.med.id,
