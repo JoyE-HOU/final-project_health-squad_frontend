@@ -3,7 +3,7 @@ import ReminderCard from '../components/ReminderCard';
 function ReminderContainer(props){
     return(
       <div>
-        <div class="alert alert-secondary" role="alert">
+        <div className="alert alert-secondary" role="alert">
           <h4>Current Reminders</h4>
         </div>
       <div>

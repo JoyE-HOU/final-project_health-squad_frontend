@@ -8,9 +8,9 @@ import RefillContainer from './RefillContainer'
 
 //forms
 import MedAddForm from '../forms/MedAddForm'
-import MedEditForm from '../forms/MedEditForm'
+// import MedEditForm from '../forms/MedEditForm'
 
-import CreatePDF from '../test_code/CreatePDF'
+import CreatePDF from '../forms/CreatePDF'
 
 
 
@@ -18,7 +18,7 @@ const prescriptionURL = 'http://localhost:3000/api/v1/prescriptions'
 
 function UserContainer(props){
 
-    console.log(props);
+    // console.log(props.user.id);
 
     const [medications, setMedications] = useState([])
     //change greeting based on time of day
@@ -40,7 +40,7 @@ function UserContainer(props){
         const data = await response.json();
         setMedications(data)
     }
-    console.log(medications);
+    // console.log(medications);
     
     //change greeting based on time of day
     const getHour = () => {
@@ -71,9 +71,9 @@ function UserContainer(props){
                     <br></br>
                     <CreatePDF medications={medications}/>
                     <br></br>
-                    <MedAddForm />
+                    <MedAddForm user={props.user}/>
                     <br></br>
-                    <MedEditForm />
+                    {/* <MedEditForm /> */}
                 </div>
                 <div className="col-md">
                     <RefillContainer medications={medications}/>

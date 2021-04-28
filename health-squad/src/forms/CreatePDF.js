@@ -7,7 +7,7 @@ function CreatePDF (props) {
     // let Help = props.medications.map(med => console.log(med.medication.name))
     let medName = props.medications.map(med => med.medication.name)
     let medDosage = props.medications.map(med => med.medication.dosage)
-    console.log(medName);
+    // console.log(medName);
 
     const Hello = () => {
 
@@ -25,7 +25,7 @@ function CreatePDF (props) {
 
     return(
         <div>
-            <button onClick={Hello} type="button" class="btn btn btn-info btn-sm btn-block">Download PDF</button>
+            <button onClick={Hello} type="button" className="btn btn btn-info btn-sm btn-block">Download PDF</button>
         </div>
     )
 }
