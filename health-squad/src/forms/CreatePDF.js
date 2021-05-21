@@ -9,6 +9,14 @@ function CreatePDF (props) {
     let medDosage = props.medications.map(med => med.medication.dosage)
     // console.log(medName);
 
+    let date = new Date();
+    let dd = String(date.getDate()).padStart(2, '0');
+    let mm = String(date.getMonth() + 1).padStart(2, '0'); //January is 0!
+    let yyyy = date.getFullYear();
+
+    let today = mm + '/' + dd + '/' + yyyy;
+    console.log(today);
+
     const Hello = () => {
 
         const doc = new jsPDF();
@@ -17,7 +25,7 @@ function CreatePDF (props) {
 
     var pageMargin = 20
     
-        doc.text("Current Medications",105, 20, null, null, "center");
+        doc.text(`Current Medications as of ${today}`,105, 20, null, null, "center");
         doc.text(medName,105, 30, null, null, "center");
         doc.save("a4.pdf");
     }
