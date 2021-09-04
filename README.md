@@ -1,6 +1,6 @@
 # Health-Squad - Frontend
 > Outline a brief description of your project.
-> Live demo [_here_](https://www.example.com). <!-- If you have the project hosted somewhere, include the link here. -->
+> Live demo [_here_](https://github.com/JoyE-HOU/final-project_health-squad_frontend). <!-- If you have the project hosted somewhere, include the link here. -->
 
 ## Table of Contents
 * [General Info](#general-information)
@@ -56,7 +56,7 @@ Provide various use cases and code examples here.
 
 
 ## Project Status
-Project is: _in progress_ / _complete_ / _no longer being worked on_. If you are no longer working on it, provide reasons why.
+Project is: _in progress_.
 
 
 ## Room for Improvement
@@ -73,13 +73,12 @@ To do:
 
 ## Acknowledgements
 Give credit here.
-- This project was inspired by...
-- This project was based on [this tutorial](https://www.example.com).
-- Many thanks to...
+- This project was inspired by my mother, Deborah Evans. Love you!!!
+- Many thanks to my instructors and cohort at Flatiron School.
 
 
 ## Contact
-Created by [@flynerdpl](https://www.flynerd.pl/) - feel free to contact me!
+Created by [@joy-evans](https://joy-evans.medium.com/) - feel free to contact me!
 
 
 <!-- Optional -->
