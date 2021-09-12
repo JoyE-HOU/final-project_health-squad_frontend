@@ -1,6 +1,13 @@
-# Health-Squad - Frontend
-> Outline a brief description of your project.
-> Live demo [_here_](https://github.com/JoyE-HOU/final-project_health-squad_frontend). <!-- If you have the project hosted somewhere, include the link here. -->
+<h1 align="center"> Health Squad </h1> <br>
+
+<p align="center">
+  <a href="health-squad/public/healthsquad_nst_logo.png">
+    <img alt="Logo" title="Logo" src="health-squad/public/healthsquad_nst_logo.png" width="200">
+  </a>
+</p>
+
+> Check out a brief demo of my project.
+> Demo [_here_](https://github.com/JoyE-HOU/final-project_health-squad_frontend).
 
 ## Table of Contents
 * [General Info](#general-information)
@@ -31,15 +38,20 @@
 
 
 ## Features
-List the ready features here:
-- Awesome feature 1
-- Awesome feature 2
-- Awesome feature 3
+A few of the things you can do with GitPoint:
+
+- Add/edit medications
+- Create "Add to Calendar" events
+- Download PDF of current medications
 
 
 ## Screenshots
-![Example screenshot](./img/screenshot.png)
-<!-- If you have screenshots you'd like to share, include them here. -->
+<p align="center">
+  <img src = "health-squad/public/Health-Squad_Screen Shot 2021-07-26 at 11.49.05 AM.png" width=450>
+  <img src = "health-squad/public/Health-Squad_Screen Shot 2021-07-26 at 11.49.52 AM.png" width=450>
+  <img src = "health-squad/public/Health-Squad_Screen Shot 2021-07-26 at 11.50.11 AM.png" width=450>
+  <img src = "health-squad/public/Health-Squad_Screen Shot 2021-07-26 at 11.50.38 AM.png" width=450>
+</p>
 
 
 ## Setup
