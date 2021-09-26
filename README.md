@@ -79,7 +79,7 @@ Room for improvement:
 - Improvement to be done 2
 
 To do:
-- Feature to be added 1
+- Use openFDA API for all medications
 - Feature to be added 2
 
 
