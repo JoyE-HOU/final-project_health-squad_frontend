@@ -2,15 +2,15 @@ import React, {useEffect, useState} from 'react'
 
 //containers
 import NavContainer from './NavContainer'
-import MedicationContainer from './MedicationContainer'
-import ReminderContainer from './ReminderContainer'
-import RefillContainer from './RefillContainer'
+// import MedicationContainer from './MedicationContainer'
+// import ReminderContainer from './ReminderContainer'
+// import RefillContainer from './RefillContainer'
 
 //forms
-import MedAddForm from '../forms/MedAddForm'
+// import MedAddForm from '../forms/MedAddForm'
 // import MedEditForm from '../forms/MedEditForm'
 
-import CreatePDF from '../forms/CreatePDF'
+// import CreatePDF from '../forms/CreatePDF'
 
 
 
@@ -67,18 +67,18 @@ function UserContainer(props){
             <br></br>
             <div className="row">
                 <div className="col-">
-                    <MedicationContainer removeMed={removeMed} medications={medications}/>
+                    {/* <MedicationContainer removeMed={removeMed} medications={medications}/> */}
                     <br></br>
-                    <CreatePDF medications={medications}/>
+                    {/* <CreatePDF medications={medications}/> */}
                     <br></br>
-                    <MedAddForm user={props.user}/>
+                    {/* <MedAddForm user={props.user}/> */}
                     <br></br>
                     {/* <MedEditForm /> */}
                 </div>
                 <div className="col-md">
-                    <RefillContainer medications={medications}/>
+                    {/* <RefillContainer medications={medications}/> */}
                     <br></br>
-                    <ReminderContainer medications={medications}/>
+                    {/* <ReminderContainer medications={medications}/> */}
                         {/* <div className="btn-group" role="group" aria-label="Basic example">
                             <button onClick={Hello} type="button" className="btn btn-secondary">Add</button>
                             <button onClick={Hello} type="button" className="btn btn-secondary">Edit</button>
