@@ -59,6 +59,8 @@ function UserContainer(props){
         setMedications(medications.filter(med => console.log(med)))
     }
 
+    let currentYear = new Date().getFullYear();
+
     return(
         <div className="container">
             <div>
@@ -87,7 +89,7 @@ function UserContainer(props){
             </div>
             <br></br>
             <footer className="bg-light text-center text-lg-start">
-                <div className="footer-copyright text-center py-3">© 2021 Copyright: Health Squad </div>
+                <div className="footer-copyright text-center py-3">© {currentYear} Copyright: Health Squad </div>
             </footer>
         </div>
     )
