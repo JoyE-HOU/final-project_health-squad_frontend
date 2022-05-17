@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
-import { 
-  BrowserRouter as Router, 
-  Route, 
+import {
+  BrowserRouter as Router,
+  Route,
   Redirect,
   Switch
 } from 'react-router-dom';
@@ -64,7 +64,7 @@ function App() {
 
   return (
     <div className="Landing">
-        <Router>
+      <Router>
           <Switch>
             <Route exact path='/'>
             <WelcomeContainer handleFormSwitch={handleFormSwitch}/>
