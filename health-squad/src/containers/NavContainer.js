@@ -1,8 +1,8 @@
-import {useHistory} from 'react-router-dom'
+import {useNavigate} from 'react-router-dom'
 
 function NavContainer(props){
 
-    const history = useHistory()
+    const history = useNavigate()
     
     function logOut() {
         localStorage.clear()

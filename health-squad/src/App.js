@@ -2,16 +2,16 @@ import React, {useState, useEffect} from 'react'
 import {
   BrowserRouter as Router,
   Route,
-  Redirect,
-  Switch
+  Redirect, // react-router-dom v6 requires you to move your <Redirect> into a <Route render> prop.
+  Routes, //  react-router-dom v6 replaced "Switch" with the "Routes" component
 } from 'react-router-dom';
 import './App.css';
 
 import WelcomeContainer from './containers/WelcomeContainer'
 import UserContainer from './containers/UserContainer'
 
-import SignUpForm from './components/SignUpComponent';
-import LoginForm from './components/LoginComponent'
+// import SignUpForm from './components/SignUpComponent';
+// import LoginForm from './components/LoginComponent'
 
 function App() {
   const [user, setUser] = useState(null)
@@ -52,37 +52,37 @@ function App() {
 
   // const currentUser = 
 
-  const renderForm = () => {
-    switch(form){
-      case "login":
-        return <LoginForm handleLogin={handleLogin}/>
-        break;
-        default:
-          return <SignUpForm handleLogin={handleLogin}/>
-    }
-  }
+  // const renderForm = () => {
+  //   switch(form){
+  //     case "login":
+  //       return <LoginForm handleLogin={handleLogin}/>
+  //       break;
+  //       default:
+  //         return <SignUpForm handleLogin={handleLogin}/>
+  //   }
+  // }
 
   return (
     <div className="Landing">
       <Router>
-          <Switch>
+          <Routes>
             <Route exact path='/'>
             <WelcomeContainer handleFormSwitch={handleFormSwitch}/>
             {
-              renderForm()
+              {/* renderForm() */}
             }
             </Route>
             
             <Route path='/user'>
-              <div className="user_container">{
+              {/* <div className="user_container">{
                 localStorage.getItem('token') ? <UserContainer user={user}/> : <Redirect to="/" />
-              }</div>
+              }</div> */}
             </Route>
 
             <Route >
-              <Redirect to='/' />
+              {/* <Redirect to='/' /> */}
             </Route>
-          </Switch>
+          </Routes>
         </Router>
     </div>
     // </div>
