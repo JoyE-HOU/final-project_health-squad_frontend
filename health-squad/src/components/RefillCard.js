@@ -18,7 +18,7 @@ const RefillCard = ({med}) => {
     // console.log(refillDate);
 
   const [event, setEvent] = useState({
-    title: 'Refill Reminder',
+    title: 'Refill Reminders',
     description: med.medication.name,
     location: 'Houston',
     startDate: sub1,
